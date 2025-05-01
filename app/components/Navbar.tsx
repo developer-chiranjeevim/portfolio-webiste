@@ -13,7 +13,7 @@ const Navbar : React.FC = () => {
     return(
         <>
             <div className="relative">
-                <div className="fixed top-0 z-20 w-full bg-[#212529] border-b-[1px] border-[#a9adb8] py-2 px-[1rem] md:px-[5rem] flex items-center justify-between">
+                <div className="fixed top-0 z-20 w-full bg-[#0c0d1f] border-b-[1px] border-[#a9adb8] py-2 px-[1rem] md:px-[5rem] flex items-center justify-between">
                     {/* navbar logo container */}
                     <div className="select-none">
                         <h1 className="capitalize text-white text-[2.5rem]"><span className="text-[#fec544]">c</span>j</h1>

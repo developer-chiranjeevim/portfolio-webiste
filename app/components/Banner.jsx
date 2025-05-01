@@ -28,7 +28,7 @@ const Banner = () => {
         >
         {methods=> (
         /* children components */
-        <div className="w-full md:h-[calc(100vh-4.75rem)] flex items-center justify-center">
+        <div className="md:h-[calc(100vh-4.75rem)] flex items-center justify-center">
           <BannerText />
         </div>
         )}
