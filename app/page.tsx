@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "./components/Banner";
 import About from "./components/About";
-
+import Resume from "./components/Resume";
 
 
 const page = () => {
@@ -12,6 +12,7 @@ const page = () => {
       <h2 className="">
         <Banner />
         <About />
+        <Resume />
       </h2>
     </>
   );
