@@ -2,18 +2,19 @@ import React from "react";
 import Banner from "./components/Banner";
 import About from "./components/About";
 import Resume from "./components/Resume";
-
+import Contact from "./components/Contact";
 
 const page = () => {
 
 
   return(
     <>
-      <h2 className="">
+      <div className="">
         <Banner />
         <About />
         <Resume />
-      </h2>
+        <Contact />
+      </div>
     </>
   );
 };
