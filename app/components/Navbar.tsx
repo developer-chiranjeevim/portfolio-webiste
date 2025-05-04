@@ -37,7 +37,7 @@ const Navbar : React.FC = () => {
                         </svg>
                     </div>
                 </div>
-                <div className={`absolute z-10 ${isNavbarActive?"duration-600 top-18" : "-top-140 duration-600"} w-full bg-[#212529] h-[20rem] px-[1rem] md:hidden`}>
+                <div className={`fixed z-10 ${isNavbarActive?"duration-600 top-18" : "-top-140 duration-600"} w-full bg-[#212529] h-[20rem] px-[1rem] md:hidden`}>
                     <ul className="text-[#a9adb8] text-[1.2rem] select-none">
                         <li className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">home</a></li>
                         <li className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">about</a></li>
