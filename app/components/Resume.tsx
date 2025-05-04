@@ -22,9 +22,9 @@ const timeLine = (timeLineDatas: timeLineDatas[]) =>{
                     timeLineDatas.map((data) =>  (
                         <li key={data.key} className="mb-10 ms-4">
                             <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
-                            <time className="mb-1 text-xl font-normal leading-none text-gray-400 capitalize">{data.duration}</time>
-                            <h3 className="text-2xl font-semibold text-[#fec544] py-[0.5rem] capitalize">{data.title} - {data.location} </h3>
-                            <p className="mb-4 text-md font-normal text-gray-500 capitalize">{data.description}</p>
+                            <time className="mb-1 text-[1.25rem] font-normal leading-none text-gray-400 capitalize">{data.duration}</time>
+                            <h3 className="text-[1.5rem] font-semibold text-[#fec544] py-[0.5rem] capitalize">{data.title} - {data.location} </h3>
+                            <p className="mb-4 text-[1.25rem] font-normal text-gray-500 capitalize">{data.description}</p>
                         </li>
                     ))
                 }                 

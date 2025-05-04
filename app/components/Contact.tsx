@@ -23,7 +23,7 @@ const ContactInfoElement : React.FC<ContactInfoProps> = ({ iconSvg, title, info 
                 <img src={`/assets/icons/${iconSvg}.svg`} alt="" className="h-[2.5rem]" />
             </div>
             <div className="ml-4">
-                <h1 className="capitalize text-white">{title}</h1>
+                <h1 className="capitalize text-white text-[1.25rem]">{title}</h1>
                 <p className="text-gray-500 capitalize">{info}</p>
             </div>
             
@@ -50,7 +50,7 @@ const Contact : React.FC = () => {
             {/* grid main container */}
             <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2 md:col-span-1 px-[2rem]">
-                    <h1 className="capitalize text-[2.5rem] text-white text-center md:text-start">just say hello</h1>
+                    <h1 className="capitalize text-[2rem] text-white text-center md:text-start">just say hello</h1>
                     {/* form input container */}
                     <div className="mt-[1rem]">
                         <form action="" className="">
@@ -64,8 +64,8 @@ const Contact : React.FC = () => {
                 </div>
                 <div className="col-span-2 md:col-span-1 px-[2rem]">
                     <div className="">     
-                        <h1 className="capitalize text-[2.5rem] text-white text-center md:text-start">contact info</h1>
-                        <p className="text-gray-500 my-[0.5rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla tincidunt id faucibus sed suscipit feugiat.</p>
+                        <h1 className="capitalize text-[2rem] text-white text-center md:text-start">contact info</h1>
+                        <p className="text-gray-500 my-[0.5rem] text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla tincidunt id faucibus sed suscipit feugiat.</p>
                     </div>
                     <div className="">
                         {
