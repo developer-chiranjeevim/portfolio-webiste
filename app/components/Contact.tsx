@@ -3,7 +3,7 @@
 import React,{ useState } from "react";
 import Title from "./Title";
 import { isContext } from "vm";
-
+import postDetails from "../api/contact";
 
 interface ContactInfoProps {
 
@@ -35,6 +35,11 @@ const ContactInfoElement : React.FC<ContactInfoProps> = ({ iconSvg, title, info 
 
 const Contact : React.FC = () => {
 
+    const [email, setEmail] = useState<string>("");
+    const [name, setName] = useState<string>("");
+    const [subject, setSubject] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
+
     const [contactInfo, setContactInfo] = useState<ContactInfoProps[]>([
         {iconSvg: "email", title: "email address", info: "developer.chiranjeevi@gmail.com"},
         {iconSvg: "phone", title: "phone number", info: "+91 9345893138"},
@@ -54,12 +59,12 @@ const Contact : React.FC = () => {
                     {/* form input container */}
                     <div className="mt-[1rem]">
                         <form action="" className="">
-                            <input placeholder="Your Name"   type="text" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
-                            <input placeholder="Your Email"   type="email" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
-                            <input placeholder="Your Subject"   type="text" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
-                            <textarea placeholder="Your Message"  className="bg-[#121325] h-[30vh] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
+                            <input onChange={(e) => setName(e.target.value)} placeholder="Your Name"   type="text" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
+                            <input onChange={(e) => setEmail(e.target.value)} placeholder="Your Email"   type="email" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
+                            <input onChange={(e) => setSubject(e.target.value)} placeholder="Your Subject"   type="text" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
+                            <textarea onChange={(e) => setMessage(e.target.value)} placeholder="Your Message"  className="bg-[#121325] h-[30vh] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
                         </form>
-                        <button className="capitalize w-full bg-[#fec544] px-[2.5rem] py-[0.75rem] rounded-lg text-[1.5rem] md:w-fit">submit</button>
+                        <button onClick={() => postDetails(name, email, subject, message)} className="capitalize w-full bg-[#fec544] px-[2.5rem] py-[0.75rem] rounded-lg text-[1.5rem] md:w-fit">submit</button>
                     </div>
                 </div>
                 <div className="col-span-2 md:col-span-1 px-[2rem]">
