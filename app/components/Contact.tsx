@@ -2,8 +2,11 @@
 
 import React,{ useState } from "react";
 import Title from "./Title";
-import { isContext } from "vm";
-import postDetails from "../api/contact";
+import axios from "axios";
+import dotenv from 'dotenv';
+
+
+dotenv.config();
 
 interface ContactInfoProps {
 
@@ -12,6 +15,26 @@ interface ContactInfoProps {
     info: string,
 
 };
+
+const postDetails = async(name: string, email: string, subject: string, message: string) => {
+    console.log(process.env.NEXT_PUBLIC_API_BASE_URL)
+
+    try{
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/contact`,{
+            email: email,
+            name: name,
+            subject: subject,
+            message: message
+        })
+        console.log("data posted successfully");
+
+    }catch(error){
+        if(error instanceof Error){
+            console.log(error.message);
+        };
+    };
+};
+
 
 
 const ContactInfoElement : React.FC<ContactInfoProps> = ({ iconSvg, title, info }) => {
@@ -58,7 +81,7 @@ const Contact : React.FC = () => {
                     <h1 className="capitalize text-[2rem] text-white text-center md:text-start">just say hello</h1>
                     {/* form input container */}
                     <div className="mt-[1rem]">
-                        <form action="" className="">
+                        <form action="submit" className="">
                             <input onChange={(e) => setName(e.target.value)} placeholder="Your Name"   type="text" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
                             <input onChange={(e) => setEmail(e.target.value)} placeholder="Your Email"   type="email" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
                             <input onChange={(e) => setSubject(e.target.value)} placeholder="Your Subject"   type="text" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
