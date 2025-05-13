@@ -4,7 +4,7 @@ import React,{ useState } from "react";
 import Title from "./Title";
 import axios from "axios";
 import dotenv from 'dotenv';
-
+import postDetails from "../api/contact";
 
 dotenv.config();
 
@@ -15,26 +15,6 @@ interface ContactInfoProps {
     info: string,
 
 };
-
-const postDetails = async(name: string, email: string, subject: string, message: string) => {
-    console.log(process.env.NEXT_PUBLIC_API_BASE_URL)
-
-    try{
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/contact`,{
-            email: email,
-            name: name,
-            subject: subject,
-            message: message
-        })
-        console.log("data posted successfully");
-
-    }catch(error){
-        if(error instanceof Error){
-            console.log(error.message);
-        };
-    };
-};
-
 
 
 const ContactInfoElement : React.FC<ContactInfoProps> = ({ iconSvg, title, info }) => {
