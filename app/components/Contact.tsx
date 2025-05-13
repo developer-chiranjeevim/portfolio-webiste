@@ -2,11 +2,10 @@
 
 import React,{ useState } from "react";
 import Title from "./Title";
-import axios from "axios";
-import dotenv from 'dotenv';
 import postDetails from "../api/contact";
+import { Formik, Form, Field, ErrorMessage, FormikValues } from 'formik';
+import * as Yup from 'yup';
 
-dotenv.config();
 
 interface ContactInfoProps {
 
@@ -16,6 +15,20 @@ interface ContactInfoProps {
 
 };
 
+
+interface FormInputValues {
+    name: string,
+    email: string,
+    subject: string,
+    message: string,
+}
+
+const validationSchema = Yup.object({
+    name: Yup.string().required('Name is required'),
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    subject: Yup.string().min(5, 'Subject Should Be Minimum 5 Characters').required('Subject is Required'),
+    message: Yup.string().min(5, 'Message Should Be Minimum 5 Characters').required('Message is Required'),
+});
 
 const ContactInfoElement : React.FC<ContactInfoProps> = ({ iconSvg, title, info }) => {
 
@@ -37,11 +50,22 @@ const ContactInfoElement : React.FC<ContactInfoProps> = ({ iconSvg, title, info 
 
 
 const Contact : React.FC = () => {
+    //component states
+    const [submitOnLoad, setSubmitOnLoad] = useState<boolean>(true);
 
-    const [email, setEmail] = useState<string>("");
-    const [name, setName] = useState<string>("");
-    const [subject, setSubject] = useState<string>("");
-    const [message, setMessage] = useState<string>("");
+
+
+    const initialValues: FormInputValues= { name: '', email: '', subject: '', message: '' };
+
+    const onSubmit = async(values: FormInputValues) => {
+        setSubmitOnLoad(false);
+        const response = await postDetails(values.name, values.email, values.subject, values.message);
+        if(response){
+            setSubmitOnLoad(true);
+        }else{
+            setSubmitOnLoad(false);
+        };
+    };
 
     const [contactInfo, setContactInfo] = useState<ContactInfoProps[]>([
         {iconSvg: "email", title: "email address", info: "developer.chiranjeevi@gmail.com"},
@@ -61,13 +85,28 @@ const Contact : React.FC = () => {
                     <h1 className="capitalize text-[2rem] text-white text-center md:text-start">just say hello</h1>
                     {/* form input container */}
                     <div className="mt-[1rem]">
-                        <form action="submit" className="">
-                            <input onChange={(e) => setName(e.target.value)} placeholder="Your Name"   type="text" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
-                            <input onChange={(e) => setEmail(e.target.value)} placeholder="Your Email"   type="email" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
-                            <input onChange={(e) => setSubject(e.target.value)} placeholder="Your Subject"   type="text" className="bg-[#121325] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
-                            <textarea onChange={(e) => setMessage(e.target.value)} placeholder="Your Message"  className="bg-[#121325] h-[30vh] text-white p-[1rem] w-full mb-[1rem] rounded-lg focus:outline-none" />
-                        </form>
-                        <button onClick={() => postDetails(name, email, subject, message)} className="capitalize w-full bg-[#fec544] px-[2.5rem] py-[0.75rem] rounded-lg text-[1.5rem] md:w-fit">submit</button>
+                        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+                            <Form action="submit" className="">
+                                <Field name="name" placeholder="Your Name"   type="text" className="bg-[#121325] text-white p-[1rem] w-full my-[0.5rem] rounded-lg focus:outline-none" />
+                                <ErrorMessage name="name" component="p" className="text-red-500 text-[1rem]" />
+                                <Field name="email" placeholder="Your Email"   type="email" className="bg-[#121325] text-white p-[1rem] w-full my-[0.5rem] rounded-lg focus:outline-none" />
+                                <ErrorMessage name="email" component="p" className="text-red-500 text-[1rem]" />
+                                <Field name="subject" placeholder="Your Subject"   type="text" className="bg-[#121325] text-white p-[1rem] w-full my-[0.5rem] rounded-lg focus:outline-none" />
+                                <ErrorMessage name="subject" component="p" className="text-red-500 text-[1rem]" />
+                                <Field name="message" as="textarea" placeholder="Your Message"  className="bg-[#121325] h-[30vh] text-white p-[1rem] w-full my-[0.5rem] rounded-lg focus:outline-none" />
+                                <ErrorMessage name="message" component="p" className="text-red-500 text-[1rem]" />
+                                <button type="submit" className="capitalize mt-[0.5rem] w-full bg-[#fec544] px-[2.5rem] py-[0.75rem] rounded-lg text-[1.5rem] md:w-fit">
+                                    {
+                                        submitOnLoad?
+                                            "submit"
+                                            :
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 animate-spin">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                            </svg>  
+                                    }
+                                </button>
+                            </Form>
+                        </Formik>
                     </div>
                 </div>
                 <div className="col-span-2 md:col-span-1 px-[2rem]">

@@ -11,9 +11,11 @@ const postDetails = async(name, email, subject, message) => {
             message: message
         })
         console.log("data posted successfully");
+        return true;
 
     }catch(error){
         console.log(error.message);
+        return false;
     };
 };
 
