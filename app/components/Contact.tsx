@@ -40,7 +40,7 @@ const ContactInfoElement : React.FC<ContactInfoProps> = ({ iconSvg, title, info 
             </div>
             <div className="ml-4">
                 <h1 className="capitalize text-white text-[1.25rem]">{title}</h1>
-                <p className="text-gray-500 capitalize">{info}</p>
+                <p className={`text-gray-500 ${title != "email address"? "capitalize" : ""}`}>{info}</p>
             </div>
             
         </div>
@@ -112,7 +112,7 @@ const Contact : React.FC = () => {
                 <div className="col-span-2 md:col-span-1 px-[2rem]">
                     <div className="">     
                         <h1 className="capitalize text-[2rem] text-white text-center md:text-start">contact info</h1>
-                        <p className="text-gray-500 my-[0.5rem] text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla tincidunt id faucibus sed suscipit feugiat.</p>
+                        <p className="text-gray-500 my-[0.5rem] text-[1rem]">Always open to collaborations and discussions around tech, or anything that blends purpose with code. Let's connect!</p>
                     </div>
                     <div className="">
                         {

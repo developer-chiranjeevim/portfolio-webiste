@@ -36,14 +36,15 @@ const timeLine = (timeLineDatas: timeLineDatas[]) =>{
 const Resume : React.FC = () => {
 
     const [timeLineDatasExperience, setTimeLineDatasExperience] = useState<timeLineDatas[]>([
-        {key: 1, title: "front-end developer intern", duration: "Jan 2023 - July 2023", location: "PSG CAS, Coimbatore", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla, tincidunt id faucibus sed, suscipit feugiat turpis."},
-        {key: 2, title: "full stack developer intern", duration: "June 2024 - Nov 2024", location: "ShamlaTech Solutions, Coimbatore", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla, tincidunt id faucibus sed, suscipit feugiat turpis."},
+        {key: 1, title: "full stack developer intern", duration: "June 2024 - Nov 2024", location: "ShamlaTech Solutions, Coimbatore", description: "Worked as a Full Stack Developer intern at ShamlaTech Solutions, Where I gained indepth knowledge in React, Node JS and AWS Cloud."},
+        {key: 2, title: "front-end developer intern", duration: "Jan 2023 - July 2023", location: "PSG CAS, Coimbatore", description: "Worked as a Front-End Developer intern at the software team of PSGCAS where my day to day task involves developing modular and responsive user interfaces."},
+        
     
     ]);
 
     const [timeLineDatasEductaion, setTimeLineDatasEducation] = useState<timeLineDatas[]>([
-        {key: 1, title: "front-end developer intern", duration: "Jan 2023 - July 2023", location: "PSG CAS, Coimbatore", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla, tincidunt id faucibus sed, suscipit feugiat turpis."},
-        {key: 2, title: "full stack developer intern", duration: "June 2024 - Nov 2024", location: "ShamlaTech Solutions, Coimbatore", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla, tincidunt id faucibus sed, suscipit feugiat turpis."},
+        {key: 1, title: "M.Sc Software Systems", duration: "Sept 2021 - May 2026", location: "PSG CAS, Coimbatore", description: "Currently persuing my master's degree in software systems from PSG College of Arts & Science, Coimbatore. During my academic days I had participated in variou hackathons across tamil and secured prices."},
+        {key: 2, title: "HSC - Sri Jayendra Saraswathy Maha Vidyalaya CBSE", duration: "June 2019 - AUG 2021", location: "Coimbatore", description: "Completed my higher secondaty schooling from Sri Jayendra Saraswathy Maha Vidyalaya CBSE School. Participated in various programming contest during my school days."},
     ]);
 
     return(

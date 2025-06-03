@@ -18,16 +18,15 @@ const About : React.FC = () =>{
                             <h1 className="capitalize text-white text-[2.5rem]">hi there i'm chiranjeevi</h1>
                             <p className="text-[#fec544] capitalize text-[1.5rem]">AWS certified solutions architect</p>
                             <div className="my-[2rem]">
-                                <p className="text-[#a9adb8] text-justify text-[1.25rem]">I am a Visual Designer with a strong focus on digital branding. Visul design seeks to attract, inspire, create desires and motivate people to respond to messages, with a view to making a favorable impact.</p>
+                                <p className="text-[#a9adb8] text-justify text-[1.25rem]">I'm a Master's student in Software Systems with hands-on experience in full-stack development and cloud technologies, recently earning the AWS Solutions Architect – Associate certification. Passionate about building scalable, cost-efficient systems, I enjoy solving real-world problems through clean architecture and efficient design.</p>
                             </div>
                             <div className="my-[2rem]">
                                 <ul className="text-[#a9adb8] text-[1.25rem]">
-                                    <li className="capitalize mb-[0.5rem]">Birthday : May 07, 1990</li>
-                                    <li className="capitalize mb-[0.5rem]">phone : +1 876-369-9009</li>
-                                    <li className="capitalize mb-[0.5rem]">Birthday : May 07, 1990</li>
-                                    <li className="capitalize mb-[0.5rem]">Email : devis@example.com</li>
-                                    <li className="capitalize mb-[0.5rem]">From : 2661 Hich meadow lane bear creek</li>
-                                    <li className="capitalize mb-[0.5rem]">Language : English, Germanic</li>
+                                    <li className="capitalize mb-[0.5rem]">Birthday : July 08, 2004</li>
+                                    <li className="capitalize mb-[0.5rem]">phone : +91 9345893138</li>
+                                    <li className="mb-[0.5rem]">Email : developer.chiranjeevim@gmail.com</li>
+                                    <li className="capitalize mb-[0.5rem]">From : Coimbatore, Tamilnadu, India 641-103</li>
+                                    <li className="capitalize mb-[0.5rem]">Language : Tamil, English</li>
                                 </ul>
                             </div>
                             <div className="my-[5rem]">

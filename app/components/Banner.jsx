@@ -12,8 +12,8 @@ const BannerText = () => {
   return(
     <div className="text-center my-[4rem] mx-[0.5rem]">
       <h1 className="text-white text-[2rem] md:text-5xl">Hi, I am <span className="text-[#fec544]">Chiranjeevi</span></h1>
-      <p className="text-[#a9adb8] mt-[1.5rem] text-[1rem] md:text-[1.5rem]">I am a frontend web developer. I can provide clean code and pixel perfect design.</p>
-      <p className="text-[#a9adb8] text-[1rem] md:text-[1.5rem] ">I also make website more & more interactive with web animations.</p>
+      <p className="text-[#a9adb8] mt-[1.5rem] text-[1rem] md:text-[1.5rem]">I’m a master's student at PSG College of Arts and Science pursuing an MSc in Software Systems</p>
+      <p className="text-[#a9adb8] text-[1rem] md:text-[1.5rem] "> I’m also an AWS Certified Solutions Architect – Associate</p>
     </div>
   );
 };
