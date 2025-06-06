@@ -10,6 +10,15 @@ const Navbar : React.FC = () => {
 
     const [isNavbarActive, setNavbarActive] = useState(true);
 
+    const scrollToSection = (id: string) => {
+        setNavbarActive(false);
+
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return(
         <>
             <div className="relative">
@@ -22,11 +31,11 @@ const Navbar : React.FC = () => {
                     {/* navbar menu container */}
                     <div className="hidden md:block">
                         <ul className="text-white inline-flex items-center select-none">
-                            <li className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">home</a></li>
-                            <li className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">about</a></li>
-                            <li className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">resume</a></li>
-                            <li className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">portfolio</a></li>
-                            <li className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">contact</a></li>
+                            <li onClick={() => scrollToSection("home")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">home</li>
+                            <li onClick={() => scrollToSection("about")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">about</li>
+                            <li onClick={() => scrollToSection("resume")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">resume</li>
+                            <li onClick={() => scrollToSection("portfolio")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">portfolio</li>
+                            <li onClick={() => scrollToSection("contact")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">contact</li>
                         </ul>
                     </div>
 
@@ -39,11 +48,11 @@ const Navbar : React.FC = () => {
                 </div>
                 <div className={`fixed z-10 ${isNavbarActive?"duration-600 top-18" : "-top-140 duration-600"} w-full bg-[#212529] h-[20rem] px-[1rem] md:hidden`}>
                     <ul className="text-[#a9adb8] text-[1.2rem] select-none">
-                        <li className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">home</a></li>
-                        <li className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">about</a></li>
-                        <li className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">resume</a></li>
-                        <li className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">portfolio</a></li>
-                        <li className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600"><a href="#" className="">contact</a></li>
+                        <li onClick={() => scrollToSection("home")} className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600">home</li>
+                        <li onClick={() => scrollToSection("about")} className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600">about</li>
+                        <li onClick={() => scrollToSection("resume")} className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600">resume</li>
+                        <li onClick={() => scrollToSection("portfolio")} className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600">portfolio</li>
+                        <li onClick={() => scrollToSection("contact")} className="uppercase mt-[1.5rem] hover:text-[#fec544] duration-600">contact</li>
                     </ul>
                 </div>
             </div>

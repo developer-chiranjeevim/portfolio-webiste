@@ -6,14 +6,21 @@ import Contact from "./components/Contact";
 
 const page = () => {
 
-
   return(
     <>
       <div className="">
-        <Banner />
-        <About />
-        <Resume />
-        <Contact />
+        <section id="home">
+          <Banner />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="resume">
+          <Resume />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </div>
     </>
   );

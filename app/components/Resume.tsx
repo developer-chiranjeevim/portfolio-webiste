@@ -43,7 +43,7 @@ const Resume : React.FC = () => {
     ]);
 
     const [timeLineDatasEductaion, setTimeLineDatasEducation] = useState<timeLineDatas[]>([
-        {key: 1, title: "M.Sc Software Systems", duration: "Sept 2021 - May 2026", location: "PSG CAS, Coimbatore", description: "Currently persuing my master's degree in software systems from PSG College of Arts & Science, Coimbatore. During my academic days I had participated in variou hackathons across tamil and secured prices."},
+        {key: 1, title: "M.Sc Software Systems", duration: "Sept 2021 - May 2026", location: "PSG CAS, Coimbatore", description: "Currently persuing my master's degree in software systems from PSG College of Arts & Science, Coimbatore. During my academic days I had participated in variou hackathons across tamil nadu and secured prices."},
         {key: 2, title: "HSC - Sri Jayendra Saraswathy Maha Vidyalaya CBSE", duration: "June 2019 - AUG 2021", location: "Coimbatore", description: "Completed my higher secondaty schooling from Sri Jayendra Saraswathy Maha Vidyalaya CBSE School. Participated in various programming contest during my school days."},
     ]);
 
