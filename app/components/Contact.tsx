@@ -5,6 +5,7 @@ import Title from "./Title";
 import postDetails from "../api/contact";
 import { Formik, Form, Field, ErrorMessage, FormikValues } from 'formik';
 import * as Yup from 'yup';
+import Alerts from "./Alerts";
 
 
 interface ContactInfoProps {
@@ -52,6 +53,7 @@ const ContactInfoElement : React.FC<ContactInfoProps> = ({ iconSvg, title, info 
 const Contact : React.FC = () => {
     //component states
     const [submitOnLoad, setSubmitOnLoad] = useState<boolean>(true);
+    const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
 
 
@@ -62,9 +64,11 @@ const Contact : React.FC = () => {
         const response = await postDetails(values.name, values.email, values.subject, values.message);
         if(response){
             setSubmitOnLoad(true);
+            setIsSubmitted(true);
         }else{
             setSubmitOnLoad(false);
         };
+        
     };
 
     const [contactInfo, setContactInfo] = useState<ContactInfoProps[]>([
@@ -95,6 +99,13 @@ const Contact : React.FC = () => {
                                 <ErrorMessage name="subject" component="p" className="text-red-500 text-[1rem]" />
                                 <Field name="message" as="textarea" placeholder="Your Message"  className="bg-[#121325] h-[30vh] text-white p-[1rem] w-full my-[0.5rem] rounded-lg focus:outline-none" />
                                 <ErrorMessage name="message" component="p" className="text-red-500 text-[1rem]" />
+                                {
+                                    isSubmitted?
+                                        <Alerts />
+                                    :
+                                    <></>
+                                }
+                                
                                 <button type="submit" className="capitalize mt-[0.5rem] w-full bg-[#fec544] px-[2.5rem] py-[0.75rem] rounded-lg text-[1.5rem] md:w-fit">
                                     {
                                         submitOnLoad?
