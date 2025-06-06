@@ -79,7 +79,7 @@ const Contact : React.FC = () => {
 
 
     return(
-        <div className="bg-[#0c0d1f] py-[4rem] md:px-[3rem] lg:px-[7rem]">
+        <div className="bg-[#090a1c] py-[4rem] md:px-[3rem] lg:px-[7rem]">
             <div className="">
                 <Title text={"contact"} />
             </div>
