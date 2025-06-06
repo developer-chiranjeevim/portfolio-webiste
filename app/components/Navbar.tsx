@@ -31,11 +31,11 @@ const Navbar : React.FC = () => {
                     {/* navbar menu container */}
                     <div className="hidden md:block">
                         <ul className="text-white inline-flex items-center select-none">
-                            <li onClick={() => scrollToSection("home")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">home</li>
-                            <li onClick={() => scrollToSection("about")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">about</li>
-                            <li onClick={() => scrollToSection("resume")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">resume</li>
-                            <li onClick={() => scrollToSection("portfolio")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">portfolio</li>
-                            <li onClick={() => scrollToSection("contact")} className="uppercase mr-[1.5rem] hover:text-[#fec544] duration-600">contact</li>
+                            <li onClick={() => scrollToSection("home")} className="uppercase mr-[1.5rem] cursor-pointer hover:text-[#fec544] duration-600">home</li>
+                            <li onClick={() => scrollToSection("about")} className="uppercase mr-[1.5rem] cursor-pointer hover:text-[#fec544] duration-600">about</li>
+                            <li onClick={() => scrollToSection("resume")} className="uppercase mr-[1.5rem] cursor-pointer hover:text-[#fec544] duration-600">resume</li>
+                            <li onClick={() => scrollToSection("portfolio")} className="uppercase mr-[1.5rem] cursor-pointer hover:text-[#fec544] duration-600">portfolio</li>
+                            <li onClick={() => scrollToSection("contact")} className="uppercase mr-[1.5rem] cursor-pointer hover:text-[#fec544] duration-600">contact</li>
                         </ul>
                     </div>
 

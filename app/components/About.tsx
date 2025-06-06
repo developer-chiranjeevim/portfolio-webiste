@@ -1,6 +1,18 @@
+"use client"
+
 import React from "react";
 import Title from "./Title";
 
+
+const download_resume = () => {
+
+    const link = document.createElement('a');
+    link.href = '/Chiranjeevi_Resume.pdf'; 
+    link.download = 'Chiranjeevi_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 
 const About : React.FC = () =>{
 
@@ -30,7 +42,7 @@ const About : React.FC = () =>{
                                 </ul>
                             </div>
                             <div className="my-[5rem]">
-                                <button className="capitalize text-black bg-[#fec544] text-[1.5rem] font-thin px-[1rem] py-[0.5rem] rounded-lg">download CV</button>
+                                <button onClick={() => download_resume()} className="capitalize text-black bg-[#fec544] text-[1.5rem] font-thin px-[1rem] py-[0.5rem] rounded-lg">download CV</button>
                             </div>
                                 
                         </div>
