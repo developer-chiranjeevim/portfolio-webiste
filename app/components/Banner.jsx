@@ -14,6 +14,9 @@ const BannerText = () => {
       <h1 className="text-white text-[2rem] md:text-5xl">Hi, I am <span className="text-[#fec544]">Chiranjeevi</span></h1>
       <p className="text-[#a9adb8] mt-[1.5rem] text-[1rem] md:text-[1.5rem]">I’m a master's student at PSG College of Arts and Science pursuing an MSc in Software Systems</p>
       <p className="text-[#a9adb8] text-[1rem] md:text-[1.5rem] "> I’m also an AWS Certified Solutions Architect – Associate</p>
+      {/* <div className="flex items-center justify-center">
+        <img src="/assets/icons/github.svg" alt="" className="text-white w-[4rem]" />
+      </div> */}
     </div>
   );
 };

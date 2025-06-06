@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "./components/Banner";
 import About from "./components/About";
 import Resume from "./components/Resume";
+import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 
 const page = () => {
@@ -17,6 +18,9 @@ const page = () => {
         </section>
         <section id="resume">
           <Resume />
+        </section>
+        <section id="portfolio">
+          <Portfolio />
         </section>
         <section id="contact">
           <Contact />
