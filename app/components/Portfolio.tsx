@@ -5,10 +5,10 @@ const Portfolio : React.FC = () => {
 
     return(
         <>
-        <div className="bg-[#0c0d1f] py-[2rem] md:px-[3rem] lg:px-[7rem]">
+        <div className="bg-[#0c0d1f] px-[2rem] py-[2rem] md:px-[3rem] lg:px-[7rem]">
             <Title text={"portfolio"}/>
             <div className="grid grid-cols-2 gap-[2rem]">
-                <div className="col-span-1">
+                <div className="col-span-2 xl:col-span-1">
                     <h1 className="capitalize text-white text-[2.5rem]">I'm a</h1>
                     <p className="text-[#fec544] capitalize text-[1.5rem]">AWS certified solutions architect - associate</p>
                     <div className="">
@@ -22,7 +22,7 @@ const Portfolio : React.FC = () => {
 
                     </ul>
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 xl:col-span-1 xl:w-full h-full flex justify-center items-center">
                     <img src="/assets/images/aws.jpeg" alt="" className="" />
                 </div>
             </div>
